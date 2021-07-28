@@ -1,0 +1,3 @@
+[submodule "NethTest"]
+	path = NethTest
+	url = git@github.com:1swaraj/NethTest.git

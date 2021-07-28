@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "Nethermind.Int256/1.0.0": {
+        "runtime": {
+          "Nethermind.Int256.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Nethermind.Int256/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
