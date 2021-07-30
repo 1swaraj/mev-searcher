@@ -19,5 +19,6 @@ symlink_creator () {
 }
 cd ./NethTest/src/Nethermind/
 symlink_creator "Nethermind.MevSearcher"
+symlink_creator "Nethermind.MevSearcher.Test"
 echo "Done"
 
