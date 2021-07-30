@@ -1,4 +1,23 @@
 #! /bin/bash
-ln -s Nethermind.MevSearcher ./NethTest/src/Nethermind/
-ln -s Nethermind.MevSearcher.Test ./NethTest/src/Nethermind/
-cp configs/* ./NethTest/src/Nethermind/Nethermind.Runner/configs
+cp -r Nethermind.MevSearcher* ./NethTest/src/Nethermind/
+cp -r configs/* ./NethTest/src/Nethermind/Nethermind.Runner/configs
+cwd=$(pwd)
+#rm -rf Nethermind.MevSearcher/*
+#rm -rf Nethermind.MevSearcher.Test/*
+symlink_creator () {
+    shopt -s nullglob dotglob
+    for pathname in "$1"/*; do
+        if [ -d "$pathname" ]; then
+            symlink_creator "$pathname"
+        else
+            if [[ "$pathname" != *"bin"* && "$pathname" != *"obj"* ]] 
+            then
+                ln -f $pathname $cwd/$pathname
+            fi
+        fi
+    done
+}
+cd ./NethTest/src/Nethermind/
+symlink_creator "Nethermind.MevSearcher"
+echo "Done"
+
